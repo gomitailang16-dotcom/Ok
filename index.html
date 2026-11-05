@@ -1,0 +1,104 @@
+
+===== HTML（現在の画面から作り直したもの） https://tashiro.adotann.me/ =====
+<html lang="ja"><!-- ネストまな板で草 --><head>
+<meta charset="UTF-8">
+<meta name="”viewport”" content="”width=device-width,initial-scale=1″">
+
+<meta name="description" content="田代砲の保管庫が崩れてなくなっていたので、JSの練習も兼ねて作りました
+指定したアドレスにGETを送るだけのシンプル構造、使いやすいUI">
+<meta property="og:url" content="http://tashiro.adotann.me">
+<meta property="og:type" content="website">
+<meta property="og:title" content="令和最新版無料田代砲">
+<meta property="og:description" content="古代兵器の田代砲が令和の時代に再登場。使いやすいUI・iframeより動作の軽いGET送信式">
+<meta property="og:site_name" content="田代砲 砲撃制御画面">
+<meta property="og:image" content="https://cdn.adotann.me/Tashiro/img">
+
+<title>令和最新版無料田代砲</title>
+
+<link rel="apple-touch-icon" href="favicon.ico">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="main.css">
+<link rel="manifest" href="manifest.json">
+
+</head>
+
+<body><div class="header">
+<img src="favicon.ico" style="height:100px;vertical-align: top">
+<font class="header-text">令和最新版無料田代砲 2.1</font></div>
+
+
+ <script>
+        window.addEventListener('load', function () {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register("./serviceWorker.js")
+                    .then(function (registration) {
+                        console.log("serviceWorker registed.");
+                    }).catch(function (error) {
+                        console.warn("serviceWorker error.", error);
+                    });
+            }
+        });
+    </script>
+
+<font class="welcome">よ　う　こ　そ</font>
+
+<a href="https://ssl-tashiro.adotann.me" class="link"><img src="link-s" class="link-img"><br>SSL（https）サイトに砲撃する</a>
+
+<a href="http://nossl-tashiro.adotann.me" class="linkns"><img src="link-ns" class="link-img"><br>非SSL（http）サイトに砲撃する</a>
+
+<img src="logo" class="img">
+
+    <span style="display:block;text-align:center;font-size:40px;padding-bottom:20px;">更新履歴</span>
+    <div class="nws">
+        <span class="nlink">●2026/1/12　v2.1<br><b>
+            <ul>
+                <li>砲撃回数・レスポンス欄に実際の砲撃・レスポンス間隔を表示するようにしました。</li><p>
+            </p></ul>
+        </b></span>
+        <hr width="96%" style="margin:10px 10px">
+        
+        <span class="nlink">●2026/1/4　v2.0<br><b>
+            <ul>
+                <li>CORS制限回避のために、画像取得方式にしました。<br>ランダムな画像ファイルを取得しようとする事でcorsを回避しつつキャッシュを予防してgetリクエストを送信できるようになりました。</li><p>
+                </p><li>サーバーからのレスポンスカウンターを追加しました。<br>サーバーが稼働しているか・getが届いているか判断しやすくなりました。</li><p>
+                </p><li>フォントを見やすいものに変更しました。<br></li><p>
+                既知の問題：
+                </p><li>非sslサイト用田代砲でcors制限がかかる場合がある、<br>またそのエラーでレスポンスがカウントされる</li>
+            </ul>
+        </b></span>
+        <hr width="96%" style="margin:10px 10px">
+    </div>
+
+<div class="bottom"><b>
+<a href="https://adotann.me" target="_blank">制作者のホームページへ</a>
+
+</b></div>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5579cd9acbecc19',t:'MTc5MzgzNzE4OA=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5579cd9acbecc19',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: medium; visibility: hidden;"></iframe><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;a87a7004d5e744c8af47c98b55f82ba7&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+</body></html>
+
+===== インラインスクリプト No.1 =====
+
+        window.addEventListener('load', function () {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register("./serviceWorker.js")
+                    .then(function (registration) {
+                        console.log("serviceWorker registed.");
+                    }).catch(function (error) {
+                        console.warn("serviceWorker error.", error);
+                    });
+            }
+        });
+    
+
+===== インラインスクリプト No.2 =====
+(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5579cd9acbecc19',t:'MTc5MzgzNzE4OA=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5579cd9acbecc19',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+
+===== 取得できなかったもの（他のサイトのファイルなど） =====
+https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092
+https://tashiro.adotann.me/manifest.json
+https://tashiro.adotann.me/serviceWorker.js
+https://tashiro.adotann.me/normalize.css
+https://tashiro.adotann.me/main.css
